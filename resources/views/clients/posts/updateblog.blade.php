@@ -21,7 +21,7 @@
                                             <div data-repeater-item class="outer">
                                                 <div class="mb-3">
                                                     <label for="formname">Introduction :</label>
-                                                    <input type="text" class="form-control" id="formname" name="blog_introduction" value={{$intro->introduction}}>
+                                                    <input type="text" class="form-control" id="formname" name="blog_introduction" value={{$blogs->introduction}}>
                                                 </div>
     
                                                 <div class="mb-3">
