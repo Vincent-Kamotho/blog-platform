@@ -76,7 +76,8 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        return view('clients.posts.editintro');
+        $blogs = Blog_Introduction::find($id);
+        return view('clients.posts.editintro', compact('blogs', $blogs));
     }
 
     public function blogs()
