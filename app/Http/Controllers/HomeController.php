@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('clients.userhomepage');
     }
+
+    public function website()
+    {
+        return view('website');
+    }
 }
