@@ -154,13 +154,15 @@
 
             -->
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn btn-success" style="margin-top:15px;">
+                <a href="{{route('website')}}" class="btn btn-primary" style="margin-top:15px;">
                     Go to Website
-                </button>
-                <a href={{route('logout')}} class="btn btn-danger" style="margin-top:15px;">
+                </a>
+                <a href="{{route('logout')}}" class="btn btn-danger" style="margin-top:15px;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Logout
                 </a>
-                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
             
             {{-- <div class="dropdown d-inline-block">

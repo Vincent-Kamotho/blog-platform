@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('website', [App\Http\Controllers\HomeController::class, 'website'])->name('website');
+
 Route::get('/create-blog', [App\Http\Controllers\Blogs\BlogsController::class, 'index'])->name('myblog');
 Route::post('/add-blog-introduction',[App\Http\Controllers\Blogs\BlogsController::class, 'store'])->name('store_blog_introduction');
 Route::get('/edit_blog',[App\Http\Controllers\Blogs\BlogsController::class, 'blogs'])->name('edit_blog');
