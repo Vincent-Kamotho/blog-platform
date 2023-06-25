@@ -35,21 +35,6 @@
                 <a href="index-2.html" class="d-block text-center float-left logo">JA</a>
                 <ul class="js-clone-nav ml-0 pl-0 d-none d-lg-inline-block site-menu mx-auto text-center">
                     <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
-                    <li class="has-children">
-                        <a href="#" class="nav-link">Dropdown</a>
-                        <ul class="dropdown">
-                            <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
-                            <li class="has-children">
-                                <a href="#">Menu Two</a>
-                                <ul class="dropdown">
-                                    <li><a href="#" class="nav-link">Sub Menu One</a></li>
-                                    <li><a href="#" class="nav-link">Sub Menu Two</a></li>
-                                    <li><a href="#" class="nav-link">Sub Menu Three</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" class="nav-link">Menu Three</a></li>
-                        </ul>
-                    </li>
                     <li><a href="#about-section" class="nav-link">About</a></li>
                     <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
                     <li><a href="#services-section" class="nav-link">Services</a></li>
@@ -65,15 +50,12 @@
             </div>
         </div>
     </nav>
-    <div class="site-blocks-cover overlay" style="background-image: url(websiteassets/images/hero_img.jpg);" data-aos="fade"
+    <div class="site-blocks-cover overlay" style="background-image: url({{asset($image)}});" data-aos="fade"
         data-stellar-background-ratio="0.5" id="home-section">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-8">
-                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="0">I'm James Anderson <br> A Front-end
-                        Developer</h1>
-                    <p data-aos="fade-up" data-aos-delay="100">A new work from <a href="https://colorlib/.com"
-                            class="font-weight-bold" target="_blank">Colorlib</a></p>
+                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="0">I'm {{auth()->user()->name}} <br>{{$introduction_description}}</h1>
                 </div>
             </div>
         </div>
@@ -83,7 +65,7 @@
             <div class="row mb-5 align-items-center">
                 <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
                     <div class="img-wrap">
-                        <img src="{{asset('websiteassets/images/image_1_long.jpg')}}" alt="Image placeholder" class="img-fluid">
+                        <img src="{{asset($image)}}" alt="Image placeholder" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-5 pl-lg-5" data-aos="fade-up" data-aos-delay="100">
