@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Blogs;
+namespace App\Http\Controllers\Bio;
 
-
-use App\Models\Blogs\Blog_Introduction;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class BlogsController extends Controller
+class BioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +14,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $id = $user->id;
-        
-
-        return view('clients.posts.createblog');
+        //
     }
 
     /**
@@ -42,20 +35,7 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $id = $user->id;
-
-        $image = $request->file('image');
-        $imageName = time().'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
-
-        $blog = new Blog_Introduction;
-        $blog->user_id = $id;
-        $blog->introduction = $request->input('blog_introduction');
-        $blog->image = 'images/' . $imageName;
-
-        $blog->save();
-        return redirect()->back()->with('Success', 'Item Added Successfully');
+        //
     }
 
     /**
@@ -77,18 +57,7 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        $blogs = Blog_Introduction::find($id);
-
-        return view('clients.posts.editintro', compact('blogs', $blogs));
-    }
-
-    public function blogs()
-    {
-        $user = Auth::user();
-        $user_id = $user->id;
-        $introduction = Blog_Introduction::where('user_id' , $user_id)->get();
-        
-        return view('clients.posts.editblog', compact('introduction', $introduction));
+        //
     }
 
     /**
