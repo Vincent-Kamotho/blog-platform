@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Bio;
 
-use App\Http\Controllers\Controller;
+use App\Models\Bio\Bio;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class BioController extends Controller
 {
@@ -14,7 +16,12 @@ class BioController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $bio = Bio::where('user_id' , $user_id)->get();
+        return view('clients.bio.viewbio', compact('bio' , $bio));
+        //return view('clients.Bio.viewbio')->with('bio', $bio);
     }
 
     /**
@@ -24,7 +31,7 @@ class BioController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.bio.createbio');
     }
 
     /**
@@ -35,7 +42,15 @@ class BioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $bio = new Bio;
+        $bio->user_id = $user_id;
+        $bio->bio = $request->input('bio');
+        $bio->save();
+
+        return redirect()->route('mybio')->with('success', 'Bio Added Successfully');
     }
 
     /**

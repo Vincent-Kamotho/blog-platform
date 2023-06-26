@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bio\Bio;
 use Illuminate\Http\Request;
-use App\Models\Blogs\Blog_Introduction;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Blogs\Blog_Introduction;
 
 class HomeController extends Controller
 {
@@ -36,10 +37,14 @@ class HomeController extends Controller
         $introduction_description = $introduction->pluck('introduction')->first();
         $image = $introduction->pluck('image')->first();
 
+        $bio = Bio::where('user_id' , $user_id)->get();
+        $bio_info = $bio->pluck('bio')->first();
+
         return view('website')->with([
             'introduction' => $introduction,
             'introduction_description' => $introduction_description,
-            'image' => $image
+            'image' => $image,
+            'bio_info' => $bio_info
         ]);
     }
 }

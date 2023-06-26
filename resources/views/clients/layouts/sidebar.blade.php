@@ -37,9 +37,10 @@
                         <i class="bx bx-calendar"></i>
                         <span key="t-dashboards">Bio</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-tui-calendar">Create Bio</a></li>
-                        <li><a href="#" key="t-full-calendar">Edit Bio</a></li>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('mybio')}}" key="t-tui-calendar">My Bio</a></li>
+                        <li><a href="{{route('create_bio')}}" key="t-tui-calendar">Create Bio</a></li>
+                        <li><a href="{{route('create_bio')}}" key="t-full-calendar">Edit Bio</a></li>
                     </ul>
                 </li>
 
