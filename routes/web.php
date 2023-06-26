@@ -34,4 +34,6 @@ Route::group(['prefix' => 'blogs' , 'middleware' => 'auth'], function (){
 
 Route::group(['prefix' => 'bio' , 'middleware' => 'auth'], function(){
     Route::get('/bio', [App\Http\Controllers\Bio\BioController::class, 'index'])->name('mybio');
+    Route::get('/create', [App\Http\Controllers\Bio\BioController::class, 'create'])->name('create_bio');
+    Route::post('save_bio', [App\Http\Controllers\Bio\BioController::class, 'store'])->name('save_blog');
 });
