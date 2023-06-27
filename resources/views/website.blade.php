@@ -72,11 +72,7 @@
                     <div class="section-heading">
                         <h2>My Bio</h2>
                     </div>
-                    <p>Far far away, behind <span class="highlight">the word mountains</span>, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                        at the coast of the Semantics, a large language ocean.</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p> <span class="highlight">{{$bio_info}}</span></p>
                     <div class="my-5">
                         <div class="skill">
                             <h3>Design</h3>
@@ -132,91 +128,7 @@
             </div>
         </div>
     </section>
-    <section class="untree_co-section" id="portfolio-section">
-        <div class="container">
-            <div class="row">
-                <div class="section-heading text-center col-md-12" data-aos="fade-up" data-aos-delay="0">
-                    <h2>My Portfolio</h2>
-                </div>
-            </div>
-            <div class="filters" data-aos="fade-up" data-aos-delay="100">
-                <ul>
-                    <li class="active" data-filter="*">All</li>
-                    <li data-filter=".packaging">Packaging</li>
-                    <li data-filter=".mockup">Mockup</li>
-                    <li data-filter=".typography">Typography</li>
-                    <li data-filter=".photography">Photography</li>
-                </ul>
-            </div>
-            <div class="filters-content mb-5" data-aos="fade-up" data-aos-delay="200">
-                <div class="row grid">
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <a href="{{asset('websiteassets/images/work_5.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_5.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>Card Vol. 3</h3>
-                                <div class="cat">Mockup</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all typography">
-                        <a href="images/work_1.jpg" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_1.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Typography</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <a href="{{asset('websiteassets/images/work_2.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_2.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>WoW</h3>
-                                <div class="cat">Mockup</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all packaging">
-                        <a href="{{asset('websiteassets/images/work_3.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_3.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>Seat</h3>
-                                <div class="cat">Packaging</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all typography">
-                        <a href="{{asset('websiteassets/images/work_4.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_4.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>Seat</h3>
-                                <div class="cat">Packaging</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all photography">
-                        <a href="{{asset('websiteassets/images/work_6.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_6.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Photography</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all photography">
-                        <a href="{{asset('websiteassets/images/work_7.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_7.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Photography</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <div class="untree_co-section" id="services-section">
         <div class="container">

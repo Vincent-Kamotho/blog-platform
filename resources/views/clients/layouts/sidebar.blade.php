@@ -47,7 +47,7 @@
                 
                 
 
-                <li>
+                {{-- <li>
                     <a href="#" class="has-arrow waves-effect">
                         <i class="bx bx-store"></i>
                         <span key="t-ecommerce">Portfolio</span>
@@ -56,15 +56,19 @@
                         <li><a href="#" key="t-products">Create Portfolio</a></li>
                         <li><a href="#" key="t-product-detail">Edit Portfolio</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 
                 <li>
+
+
+                    
                     <a href="#" class="has-arrow waves-effect">
                         <i class="bx bx-bitcoin"></i>
                         <span key="t-crypto">Services</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-wallet">Create Service</a></li>
+                        <li><a href="{{route('myservices')}}" key="t-wallet">My Service</a></li>
+                        <li><a href="{{route('create_services')}}" key="t-wallet">Create Service</a></li>
                         <li><a href="#" key="t-buy">Edit Service</a></li>
                     </ul>
                 </li>

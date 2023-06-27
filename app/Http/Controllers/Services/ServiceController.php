@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Bio;
+namespace App\Http\Controllers\Services;
 
-use App\Models\User;
-use App\Models\Bio\Bio;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class BioController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +14,7 @@ class BioController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $bio = Bio::where('user_id' , $user_id)->value('bio');
-        
-        return view('clients.Bio.viewbio');
-        //return view('clients.Bio.viewbio', compact('bio' , $bio));
-        //$bio=User::find($user->id)->bio->bio;
-        //return view('clients.Bio.viewbio')->with('bio', $bio);
+        return view('clients.services.viewservices');
     }
 
     /**
@@ -35,7 +24,7 @@ class BioController extends Controller
      */
     public function create()
     {
-        return view('clients.bio.createbio');
+        //return view('clients.services.viewservices');
     }
 
     /**
@@ -46,15 +35,7 @@ class BioController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $bio = new Bio;
-        $bio->user_id = $user_id;
-        $bio->bio = $request->input('bio');
-        $bio->save();
-
-        return redirect()->route('mybio')->with('success', 'Bio Added Successfully');
+        //
     }
 
     /**
