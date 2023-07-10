@@ -41,6 +41,7 @@
                         <li><a href="{{route('mybio')}}" key="t-tui-calendar">My Bio</a></li>
                         <li><a href="{{route('create_bio')}}" key="t-tui-calendar">Create Bio</a></li>
                         <li><a href="{{route('create_bio')}}" key="t-full-calendar">Edit Bio</a></li>
+                        <li><a href="{{route('skills')}}" key="t-full-calendar">Skills</a></li>
                     </ul>
                 </li>
 
@@ -53,8 +54,7 @@
                         <span key="t-ecommerce">Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-products">Create Portfolio</a></li>
-                        <li><a href="#" key="t-product-detail">Edit Portfolio</a></li>
+                        <li><a href="{{route('myportfolio')}}" key="t-product-detail">My Portfolio</a></li>
                     </ul>
                 </li> --}}
                 

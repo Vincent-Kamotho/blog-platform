@@ -72,53 +72,20 @@
                     <div class="section-heading">
                         <h2>My Bio</h2>
                     </div>
-                    <p> <span class="highlight">{{$bio_info}}</span></p>
+                    <p>{{$bio_info}}</p>
                     <div class="my-5">
                         <div class="skill">
-                            <h3>Design</h3>
+                            @foreach($skills as $skill)
+                            <h3>{{$skill->skill}}</h3>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
                                     aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
+                                    <span>{{$skill->percentage_prowess}}%</span>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        <div class="skill">
-                            <h3>HTML5</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>98%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>CSS3</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 97%" aria-valuenow="97"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>97%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>WordPress</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>88%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>Bootstrap</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>92%</span>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <p>
                         <a href="#contact-section" class="btn btn-primary smoothscroll">Hire Me</a>
@@ -128,7 +95,31 @@
             </div>
         </div>
     </section>
-    
+    <section class="untree_co-section" id="portfolio-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-heading text-center col-md-12" data-aos="fade-up" data-aos-delay="0">
+                    <h2>My Portfolio</h2>
+                </div>
+            </div>
+            
+            <div class="filters-content mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid">
+                    @foreach($portfolios as $portfolio)
+                    <div class="single-portfolio col-sm-4 all mockup">
+                        <a href="{{asset($portfolio->image)}}" data-fancybox="gal">
+                            <img src="{{asset($portfolio->image)}}" alt="Image" class="img-fluid">
+                            <div class="contents">
+                                <h3>{{$portfolio->project_name}}</h3>
+                                
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="untree_co-section" id="services-section">
         <div class="container">

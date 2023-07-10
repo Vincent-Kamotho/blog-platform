@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bio\Bio;
+use App\Models\Bio\Skill;
 use Illuminate\Http\Request;
+use App\Models\Portfolio\Portfolio;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Blogs\Blog_Introduction;
 
@@ -40,11 +42,18 @@ class HomeController extends Controller
         $bio = Bio::where('user_id' , $user_id)->get();
         $bio_info = $bio->pluck('bio')->first();
 
+        $skills = Skill::where('user_id' , $user_id)->get();
+
+        $portfolios = Portfolio::where('user_id' , $user_id)->get();
+         
+
         return view('website')->with([
             'introduction' => $introduction,
             'introduction_description' => $introduction_description,
             'image' => $image,
-            'bio_info' => $bio_info
+            'bio_info' => $bio_info,
+            'skills' => $skills,
+            'portfolios' => $portfolios
         ]);
     }
 }
