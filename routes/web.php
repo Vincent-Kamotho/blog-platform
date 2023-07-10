@@ -35,5 +35,20 @@ Route::group(['prefix' => 'blogs' , 'middleware' => 'auth'], function (){
 Route::group(['prefix' => 'bio' , 'middleware' => 'auth'], function(){
     Route::get('/bio', [App\Http\Controllers\Bio\BioController::class, 'index'])->name('mybio');
     Route::get('/create', [App\Http\Controllers\Bio\BioController::class, 'create'])->name('create_bio');
-    Route::post('save_bio', [App\Http\Controllers\Bio\BioController::class, 'store'])->name('save_blog');
+    Route::post('/save_bio', [App\Http\Controllers\Bio\BioController::class, 'store'])->name('save_blog');
+    Route::get('/skills', [App\Http\Controllers\Bio\BioController::class, 'createskill'])->name('skills');
+    Route::get('/add_skill', [App\Http\Controllers\Bio\BioController::class, 'addskill'])->name('add_skill');
+    Route::post('/save_skill',[App\Http\Controllers\Bio\BioController::class, 'saveskill'])->name('save_skill');
+    Route::get('/skills/edit/{id}',[App\Http\Controllers\Bio\BioController::class, 'editskill'])->name('edit_skill');
+    Route::post('/skills/update/{id}',[App\Http\Controllers\Bio\BioController::class, 'updateskill']);
+    Route::get('/skills/delete/{id}',[App\Http\Controllers\Bio\BioController::class, 'deleteskill']);
+});
+
+Route::group(['prefix'=>'portfolio' , 'middleware' => 'auth'], function(){
+    Route::get('/portfolio', [App\Http\Controllers\Portfolio\PortfolioController::class, 'index'])->name('myportfolio');
+    Route::get('/create',[App\Http\controllers\Portfolio\PortfolioController::class, 'create'])->name('create_portfolio');
+    Route::post('save_portfolio', [App\Http\Controllers\Portfolio\PortfolioController::class, 'store'])->name('save_portfolio');
+    Route::get('/edit_portfolio/{id}', [App\Http\Controllers\Portfolio\PortfolioController::class, 'edit']);
+    Route::post('/update_profile/{id}', [App\Http\Controllers\Portfolio\PortfolioController::class, 'update']);
+    Route::get('/delete_portfolio/{id}', [App\Http\Controllers\Portfolio\PortfolioController::class, 'destroy']);
 });

@@ -72,57 +72,20 @@
                     <div class="section-heading">
                         <h2>My Bio</h2>
                     </div>
-                    <p>Far far away, behind <span class="highlight">the word mountains</span>, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                        at the coast of the Semantics, a large language ocean.</p>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p>{{$bio_info}}</p>
                     <div class="my-5">
                         <div class="skill">
-                            <h3>Design</h3>
+                            @foreach($skills as $skill)
+                            <h3>{{$skill->skill}}</h3>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
                                     aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
+                                    <span>{{$skill->percentage_prowess}}%</span>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        <div class="skill">
-                            <h3>HTML5</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>98%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>CSS3</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 97%" aria-valuenow="97"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>97%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>WordPress</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>88%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <h3>Bootstrap</h3>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                    <span>92%</span>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <p>
                         <a href="#contact-section" class="btn btn-primary smoothscroll">Hire Me</a>
@@ -139,80 +102,20 @@
                     <h2>My Portfolio</h2>
                 </div>
             </div>
-            <div class="filters" data-aos="fade-up" data-aos-delay="100">
-                <ul>
-                    <li class="active" data-filter="*">All</li>
-                    <li data-filter=".packaging">Packaging</li>
-                    <li data-filter=".mockup">Mockup</li>
-                    <li data-filter=".typography">Typography</li>
-                    <li data-filter=".photography">Photography</li>
-                </ul>
-            </div>
+            
             <div class="filters-content mb-5" data-aos="fade-up" data-aos-delay="200">
-                <div class="row grid">
+                <div class="grid">
+                    @foreach($portfolios as $portfolio)
                     <div class="single-portfolio col-sm-4 all mockup">
-                        <a href="{{asset('websiteassets/images/work_5.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_5.jpg')}}" alt="Image" class="img-fluid">
+                        <a href="{{asset($portfolio->image)}}" data-fancybox="gal">
+                            <img src="{{asset($portfolio->image)}}" alt="Image" class="img-fluid">
                             <div class="contents">
-                                <h3>Card Vol. 3</h3>
-                                <div class="cat">Mockup</div>
+                                <h3>{{$portfolio->project_name}}</h3>
+                                
                             </div>
                         </a>
                     </div>
-                    <div class="single-portfolio col-sm-4 all typography">
-                        <a href="images/work_1.jpg" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_1.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Typography</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <a href="{{asset('websiteassets/images/work_2.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_2.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>WoW</h3>
-                                <div class="cat">Mockup</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all packaging">
-                        <a href="{{asset('websiteassets/images/work_3.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_3.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>Seat</h3>
-                                <div class="cat">Packaging</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all typography">
-                        <a href="{{asset('websiteassets/images/work_4.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_4.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>Seat</h3>
-                                <div class="cat">Packaging</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all photography">
-                        <a href="{{asset('websiteassets/images/work_6.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_6.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Photography</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single-portfolio col-sm-4 all photography">
-                        <a href="{{asset('websiteassets/images/work_7.jpg')}}" data-fancybox="gal">
-                            <img src="{{asset('websiteassets/images/work_7.jpg')}}" alt="Image" class="img-fluid">
-                            <div class="contents">
-                                <h3>House Design</h3>
-                                <div class="cat">Photography</div>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
