@@ -41,7 +41,7 @@
                             <div class="container-fluid">
             
                                 <div class="row">
-                                    <div class="col-10">
+                                    <div class="col-12">
                                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                             <h4 class="mb-sm-0 font-size-18">MY SERVICES</h4>
                                         </div>
@@ -51,46 +51,34 @@
                                             {{ Session::get('success') }}
                                         </div>
                                     @endif
-
-                                    <div class="col-2">
-                                        <a href="{{route('create_services')}}" class="btn btn-success">Add Service</a> 
-                                    </div>
                                 </div>
-                                
                                 <div class="row">
-                                    <div class="col-xl-12">
+                                    <div class="col-lg-6">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title"></h4>   
-                                                <div class="table-responsive">
-                                                    <table class="table mb-0">
+                                                <h4 class="card-title mb-4">Add Services</h4>
+                                                <form action={{route('add_service')}} class="outer-repeater" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div data-repeater-list="outer-group" class="outer">
+                                                        <div data-repeater-item class="outer">
+                                                            <div class="mb-3">
+                                                                <label for="servicename">Service Name :</label>
+                                                                <input type="text" class="form-control" name="service" placeholder="Enter the Service" required="required">
+                                                            </div>
                 
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Service</th>
-                                                                <th>Description</th>
-                                                                <th>Icon</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach ($services as $service)
-                                                        <tr>
-                                                            <td>{{$service->service_name}}</td>
-                                                            <td><img src = {{asset($service->image)}}/></td>
-                                                            <td>
-                                                                <textarea>{{ $service->description }}</textarea>
-                                                            </td>
-                                                            <td>
-                                                                <a href="{{url('/portfolio/edit_portfolio/' . $service->id)}}" class="btn btn-success">Edit</a>
-                                                                <a href="{{url('/portfolio/delete_portfolio/' . $service->id)}}" class="btn btn-danger">Delete</a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                
+                                                            <div class="mb-3">
+                                                                <label for="formdescription">Description :</label>
+                                                                <textarea id="formmessage" class="form-control" rows="4" name="description" placeholder="Enter Your Message" required="required"></textarea>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="serviceicon">Service Icon :</label>
+                                                                <input type="file" class="form-control" name="image">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

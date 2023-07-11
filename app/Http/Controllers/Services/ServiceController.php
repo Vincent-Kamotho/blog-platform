@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Services;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Services\Service;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -14,7 +16,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('clients.services.viewservices');
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $services = Service::where('user_id' , $user_id)->get();
+        return view('clients.services.viewservices')->with('services' , $services);
     }
 
     /**
@@ -24,7 +30,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //return view('clients.services.viewservices');
+        return view('clients.services.addservices');
     }
 
     /**
@@ -35,7 +41,21 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
+
+        $service = new Service;
+        $service->user_id = $user_id;
+        $service->service_name = $request->input('service');
+        $service->image = 'images/' . $imageName;
+        $service->description = $request->input('description');
+        $service->save();
+
+        return redirect()->route('myservices')->with('success' , 'Service Successfully Added');
     }
 
     /**
