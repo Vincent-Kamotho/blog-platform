@@ -43,7 +43,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0 font-size-18">MY SERVICES</h4>
+                                            <h4 class="mb-sm-0 font-size-18">EDIT SERVICE</h4>
                                         </div>
                                     </div>
                                     @if(Session::has('success'))
@@ -56,25 +56,20 @@
                                     <div class="col-lg-6">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title mb-4">Add Services</h4>
-                                                <form action={{route('add_service')}} class="outer-repeater" method="POST" enctype="multipart/form-data">
+                                                
+                                                <form action={{url('services/update_service/'. $service->id)}} class="outer-repeater" method="POST">
                                                     @csrf
                                                     <div data-repeater-list="outer-group" class="outer">
                                                         <div data-repeater-item class="outer">
                                                             <div class="mb-3">
                                                                 <label for="servicename">Service Name :</label>
-                                                                <input type="text" class="form-control" name="service" placeholder="Enter the Service" required="required">
+                                                                <input type="text" class="form-control" name="service" value={{$service->service_name}} required="required">
                                                             </div>
                 
-                                                            <div class="mb-3">
+                                                            {{-- <div class="mb-3">
                                                                 <label for="formdescription">Description :</label>
-                                                                <textarea id="formmessage" class="form-control" rows="4" name="description" placeholder="Enter Your Message" required="required"></textarea>
-                                                            </div>
-
-                                                            <div class="mb-3">
-                                                                <label for="serviceicon">Service Icon :</label>
-                                                                <input type="file" class="form-control" name="image">
-                                                            </div>
+                                                                <textarea id="formmessage" class="form-control" rows="4" name="description" value={{$service->description}} required="required"></textarea>
+                                                            </div> --}}
                                                             <button type="submit" class="btn btn-primary">Submit</button>
                                                         </div>
                                                     </div>
@@ -106,5 +101,5 @@
         <script src="{{asset('assets/js/app.js')}}"></script>
     </body>
 
-</html>
+
 

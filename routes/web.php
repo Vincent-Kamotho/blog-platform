@@ -57,4 +57,10 @@ Route::group(['prefix' => 'services' , 'middleware' => 'auth'], function (){
     Route::get('/services', [App\Http\Controllers\Services\ServiceController::class, 'index'])->name('myservices');
     Route::get('/create_service',[App\Http\Controllers\Services\ServiceController::class, 'create'])->name('create_services');
     Route::post('/add_service', [App\Http\Controllers\Services\ServiceController::class, 'store'])->name('add_service');
+    Route::get('/edit_service/{id}', [App\Http\Controllers\Services\ServiceController::class, 'edit']);
+    Route::post('/update_service/{id}', [App\Http\Controllers\Services\ServiceController::class , 'update']);
+});
+
+Route::group(['prefix' => 'resume' , 'middleware' => 'auth'], function(){
+    Route::get('create_resume', [App\Http\Controllers\Resume\ResumeController::class, 'create'])->name('create_resume');
 });

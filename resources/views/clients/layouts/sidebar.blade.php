@@ -72,7 +72,8 @@
                         <span key="t-invoices">Resume</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-invoice-list">Create Resume</a></li>
+                        <li><a href="#" key="t-invoice-list">My Resume</a></li>
+                        <li><a href="{{route('create_resume')}}" key="t-invoice-list">Create Resume</a></li>
                         <li><a href="#" key="t-invoice-detail">Edit Resume</a></li>
                     </ul>
                 </li>

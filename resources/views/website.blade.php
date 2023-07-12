@@ -133,7 +133,7 @@
                 <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up" data-aos-delay="100">  
                     <div class="site-service-item" data-animate-effect="fadeIn">
                         <span class="icon">
-                            <img src = {{$service->image}}/>
+                            <img src="{{asset($service->image)}}"  alt="Image" class="img-fluid">
                         </span>
                         <h3 class="mb-4">{{$service->service_name}}</h3>
                         <p>{{$service->description}}</p>
@@ -152,7 +152,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{asset('websiteassets/images/image_1_long.jpg')}}" alt="Image" class="img-fluid">
+                    <img src="{{asset($image)}}" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="mb-5">Work Experience</h3>

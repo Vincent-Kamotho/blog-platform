@@ -77,7 +77,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return view('clients.services.editservices')->with('service' , $service);
     }
 
     /**
@@ -89,7 +90,12 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $service = Service::find($id);
+
+        $service->service_name = $request->input('service');
+        $service->update();
+
+        return redirect()->route('myservices')->with('success', 'Service succesfully updated');
     }
 
     /**

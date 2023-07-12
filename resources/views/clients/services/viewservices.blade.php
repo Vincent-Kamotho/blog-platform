@@ -77,13 +77,13 @@
                                                             @foreach ($services as $service)
                                                         <tr>
                                                             <td>{{$service->service_name}}</td>
-                                                            <td><img src = {{asset($service->image)}}/></td>
+                                                            <td><img src="{{asset($service->image)}}"  alt="Image" class="img-fluid"></td>
                                                             <td>
                                                                 <textarea>{{ $service->description }}</textarea>
                                                             </td>
                                                             <td>
-                                                                <a href="{{url('/portfolio/edit_portfolio/' . $service->id)}}" class="btn btn-success">Edit</a>
-                                                                <a href="{{url('/portfolio/delete_portfolio/' . $service->id)}}" class="btn btn-danger">Delete</a>
+                                                                <a href="{{url('/services/edit_service/' . $service->id)}}" class="btn btn-success">Edit</a>
+                                                                <a href="{{url('/services/delete_service/' . $service->id)}}" class="btn btn-danger">Delete</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
