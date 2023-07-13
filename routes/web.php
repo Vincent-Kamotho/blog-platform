@@ -62,5 +62,14 @@ Route::group(['prefix' => 'services' , 'middleware' => 'auth'], function (){
 });
 
 Route::group(['prefix' => 'resume' , 'middleware' => 'auth'], function(){
+    Route::get('resume', [App\Http\Controllers\Resume\ResumeController::class, 'index'])->name('my_resume');
     Route::get('create_resume', [App\Http\Controllers\Resume\ResumeController::class, 'create'])->name('create_resume');
+    Route::post('save_experience', [App\Http\Controllers\Resume\WorkController::class, 'store'])->name('save_experience');
+    Route::get('experience/edit/{id}',[App\Http\Controllers\Resume\WorkController::class, 'edit']);
+    Route::post('experience/update/{id}',[App\Http\Controllers\Resume\WorkController::class, 'update']);
+    Route::get('experience/delete/{id}',[App\Http\Controllers\Resume\WorkController::class, 'destroy']);
+    Route::post('save_education', [App\Http\Controllers\Resume\EducationController::class, 'store'])->name('save_education');
+    Route::get('education/edit/{id}', [App\Http\Controllers\Resume\EducationController::class, 'edit']);
+    Route::post('education/update/{id}',[App\Http\Controllers\Resume\EducationController::class, 'update']);
+    Route::get('education/delete/{id}', [App\Http\Controllers\Resume\EducationController::class, 'destroy']);
 });

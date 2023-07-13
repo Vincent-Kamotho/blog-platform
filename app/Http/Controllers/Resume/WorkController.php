@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Resume;
 
 use App\Models\Resume\Work;
 use Illuminate\Http\Request;
-use App\Models\Resume\Education;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class ResumeController extends Controller
+class WorkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +16,7 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $works = Work::where('user_id' , $user_id)->get();
-        $educations = Education::where('user_id' , $user_id)->get();
-        return view('clients.resume.resume')->with('works', $works)
-                                            ->with('educations' , $educations);
+        //
     }
 
     /**
@@ -33,7 +26,7 @@ class ResumeController extends Controller
      */
     public function create()
     {
-        return view('clients.resume.createresume');
+        //
     }
 
     /**
@@ -44,7 +37,20 @@ class ResumeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $work = new Work;
+        $work->user_id = $user_id;
+        $work->company_name = $request->input('company_name');
+        $work->role = $request->input('role');
+        $work->employment_type = $request->input('employment_type');
+        $work->location = $request->input('location');
+        $work->start_date = $request->input('start_date');
+        $work->end_date = $request ->input('end_date');
+        $work->save();
+
+        return redirect()->route('my_resume')->with('success' , 'Experience added Successfully');
     }
 
     /**
@@ -66,7 +72,9 @@ class ResumeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $works = Work::find($id);
+
+        return view('clients.resume.editresumework')->with('works' , $works);
     }
 
     /**
@@ -78,7 +86,15 @@ class ResumeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $work = Work::find($id);
+        $work->company_name = $request->input('company_name');
+        $work->role = $request->input('role');
+        $work->employment_type = $request->input('employment_type');
+        $work->location = $request->input('location');
+        $work->start_date = $request->input('start_date');
+        $work->end_date = $request ->input('end_date');
+        $work->update();
+        return redirect()->route('my_resume')->with('success', 'Experience Successfully Updated');
     }
 
     /**
@@ -89,6 +105,10 @@ class ResumeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $work = Work::find($id);
+
+        $work->delete();
+
+        return redirect()->route('my_resume')->with('success', 'Experience Deleted');
     }
 }

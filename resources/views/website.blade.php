@@ -156,9 +156,10 @@
                 </div>
                 <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="mb-5">Work Experience</h3>
+                    @foreach($experience as $experience)
                     <div class="resume-item d-flex work">
                         <div>
-                            <h4>Senior Front End Developer</h4>
+                            <h4>{{$experience->role}}</h4>
                             <div class="d-flex">
                                 <div class="d-flex resume-meta">
                                     <span class="mr-3">
@@ -171,7 +172,7 @@
                                                     d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
                                             </svg>
                                         </span>
-                                        <span>Facebook, Inc.</span>
+                                        <span>{{$experience->company_name}}</span>
                                     </span>
                                     <span class="icon">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt"
@@ -180,14 +181,14 @@
                                                 d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                         </svg>
                                     </span>
-                                    <span>San Francisco</span>
+                                    <span>{{$experience->location}}</span>
                                 </div>
                                 <div></div>
                             </div>
                         </div>
                         <div class="ml-auto resume-meta">
                             <div class="clearfix">
-                                <span class="period d-block float-right"><span>Fulltime</span></span>
+                                <span class="period d-block float-right"><span>{{$experience->employment_type}}</span></span>
                             </div>
                             <span class="icon">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-event"
@@ -199,151 +200,15 @@
                                     <rect width="2" height="2" x="11" y="6" rx=".5" />
                                 </svg>
                             </span>
-                            <span>November 2019 - Present </span>
+                            <span>{{$experience->start_date}}</span> -->  <span>{{$experience->end_date}}</span>
                         </div>
                     </div>
-                    <div class="resume-item d-flex work">
-                        <div>
-                            <h4>Front-end Engineer</h4>
-                            <div class="d-flex">
-                                <div class="d-flex resume-meta">
-                                    <span class="mr-3">
-                                        <span class="icon">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-building"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
-                                                <path
-                                                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
-                                            </svg>
-                                        </span>
-                                        <span>Google, Inc.</span>
-                                    </span>
-                                    <span class="icon">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt"
-                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                        </svg>
-                                    </span>
-                                    <span>San Francisco</span>
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="ml-auto resume-meta">
-                            <div class="clearfix">
-                                <span class="period d-block float-right"><span>Part time</span></span>
-                            </div>
-                            <span class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-event"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
-                                    <rect width="2" height="2" x="11" y="6" rx=".5" />
-                                </svg>
-                            </span>
-                            <span>March 2015 - November 2019 </span>
-                        </div>
-                    </div>
-                    <div class="resume-item d-flex work">
-                        <div>
-                            <h4>Web Designer</h4>
-                            <div class="d-flex">
-                                <div class="d-flex resume-meta">
-                                    <span class="mr-3">
-                                        <span class="icon">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-building"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
-                                                <path
-                                                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
-                                            </svg>
-                                        </span>
-                                        <span>Github, Inc.</span>
-                                    </span>
-                                    <span class="icon">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt"
-                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                        </svg>
-                                    </span>
-                                    <span>San Francisco</span>
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="ml-auto resume-meta">
-                            <div class="clearfix">
-                                <span class="period d-block float-right"><span>Fulltime</span></span>
-                            </div>
-                            <span class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-event"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
-                                    <rect width="2" height="2" x="11" y="6" rx=".5" />
-                                </svg>
-                            </span>
-                            <span>January 2010 - March 2015 </span>
-                        </div>
-                    </div>
-                    <div class="resume-item d-flex work">
-                        <div>
-                            <h4>Lead Front-end Engineer</h4>
-                            <div class="d-flex">
-                                <div class="d-flex resume-meta">
-                                    <span class="mr-3">
-                                        <span class="icon">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-building"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
-                                                <path
-                                                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
-                                            </svg>
-                                        </span>
-                                        <span>Slack, Inc.</span>
-                                    </span>
-                                    <span class="icon">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt"
-                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                        </svg>
-                                    </span>
-                                    <span>San Francisco</span>
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="ml-auto resume-meta">
-                            <div class="clearfix">
-                                <span class="period d-block float-right"><span>Fulltime</span></span>
-                            </div>
-                            <span class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-event"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
-                                    <rect width="2" height="2" x="11" y="6" rx=".5" />
-                                </svg>
-                            </span>
-                            <span>January 2010 </span>
-                        </div>
-                    </div>
+                    @endforeach
                     <h3 class="mt-5 mb-3">Education</h3>
                     <div class="resume-item d-flex work">
+                        @foreach($education as $education)
                         <div>
-                            <h4>Master in Software Engineering</h4>
+                            <h4>{{$education->education_level}}</h4>
                             <div class="d-flex">
                                 <div class="d-flex resume-meta">
                                     <span class="mr-3">
@@ -358,7 +223,7 @@
                                                 <rect width="2" height="2" x="11" y="6" rx=".5" />
                                             </svg>
                                         </span>
-                                        <span>Harvard University</span>
+                                        <span>{{$education->institution_name}}</span>
                                     </span>
                                 </div>
                                 <div></div>
@@ -375,43 +240,9 @@
                                     <rect width="2" height="2" x="11" y="6" rx=".5" />
                                 </svg>
                             </span>
-                            <span>Columbia University</span>
+                            <span>{{$education->start_date}} - {{$education->end_date}} </span>
                         </div>
-                    </div>
-                    <div class="resume-item d-flex work">
-                        <div>
-                            <h4>Batchelor in Software Engineering</h4>
-                            <div class="d-flex">
-                                <div class="d-flex resume-meta">
-                                    <span class="mr-3">
-                                        <span class="icon">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z" />
-                                                <path
-                                                    d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
-                                            </svg>
-                                        </span>
-                                        <span>Columbia University</span>
-                                    </span>
-                                </div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="ml-auto resume-meta">
-                            <span class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-event"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
-                                    <rect width="2" height="2" x="11" y="6" rx=".5" />
-                                </svg>
-                            </span>
-                            <span>March 2015 - November 2019 </span>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

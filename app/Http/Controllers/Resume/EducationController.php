@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Resume;
 
-use App\Models\Resume\Work;
 use Illuminate\Http\Request;
 use App\Models\Resume\Education;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class ResumeController extends Controller
+class EducationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +16,7 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $works = Work::where('user_id' , $user_id)->get();
-        $educations = Education::where('user_id' , $user_id)->get();
-        return view('clients.resume.resume')->with('works', $works)
-                                            ->with('educations' , $educations);
+        //
     }
 
     /**
@@ -33,7 +26,7 @@ class ResumeController extends Controller
      */
     public function create()
     {
-        return view('clients.resume.createresume');
+        //
     }
 
     /**
@@ -44,7 +37,18 @@ class ResumeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $user_id = $user->id;
+
+        $education = new Education;
+        $education->user_id = $user_id;
+        $education->education_level = $request->input('education_level');
+        $education->institution_name = $request->input('institution');
+        $education->start_date = $request->input('start_date');
+        $education->end_date = $request->input('end_date');
+        $education->save();
+
+        return redirect()->route('my_resume')->with('success', 'Education Entry Added');
     }
 
     /**
@@ -66,7 +70,9 @@ class ResumeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $education = Education::find($id);
+
+        return view('clients.resume.editresumeeducation')->with('education' , $education);
     }
 
     /**
@@ -78,7 +84,14 @@ class ResumeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $education = Education::find($id);
+        $education->education_level = $request->input('education_level');
+        $education->institution_name = $request->input('institution');
+        $education->start_date = $request->input('start_date');
+        $education->end_date = $request->input('end_date');
+        $education->update();
+        return redirect()->route('my_resume')->with('success', 'Education Entry Updated');
+
     }
 
     /**
@@ -89,6 +102,10 @@ class ResumeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $education = Education::find($id);
+
+        $education->delete();
+
+        return redirect()->route('my_resume')->with('success', 'Education Entry Deleted');
     }
 }

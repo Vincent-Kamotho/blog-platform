@@ -45,19 +45,19 @@
                                             <div class="card-body">
                                                 <h4 class="card-title mb-4">Work Experience</h4>
         
-                                                <form action="{{route('save_experience')}}" method="POST">
+                                                <form action="{{url('resume/experience/update/'.$works->id)}}" method="POST">
                                                     @csrf
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
                                                                 <label for="companyname-input" class="form-label">Company Name</label>
-                                                                <input type="text" class="form-control" name="company_name" placeholder="Enter Company Name" required="required"/>
+                                                                <input type="text" class="form-control" name="company_name" value={{$works->company_name}} required="required"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
                                                                 <label for="role-input" class="form-label">Role</label>
-                                                                <input type="text" class="form-control" name="role" placeholder="Role Served" required="required"/>
+                                                                <input type="text" class="form-control" name="role" value={{$works->role}} required="required"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -67,7 +67,7 @@
                                                             <div class="mb-3">
                                                                 <label for="employmenttype" class="form-label">Employment Type</label>
                                                                 <select name="employment_type" class="form-select">
-                                                                    <option selected>Select Employment Type</option>
+                                                                    <option selected>{{$works->employment_type}}</option>
                                                                     <option value="Full Time">Full Time</option>
                                                                     <option value="Contract">Contract</option>
                                                                     <option value="Part Time">Part Time</option>
@@ -78,7 +78,7 @@
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
                                                                 <label for="formrow-location-input" class="form-label">Location</label>
-                                                                <input type="text" class="form-control" name="location" placeholder="Enter Location" required="required"/>
+                                                                <input type="text" class="form-control" name="location" value={{$works->location}} required="required"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,7 +88,7 @@
                                                             <div class="mb-3">
                                                                 <label>Start Date</label>
                                                                 <div class="position-relative" id="datepicker4">
-                                                                    <input type="date" class="form-control" name="start_date" id="monthYearInput" required="required"/>
+                                                                    <input type="date" class="form-control" name="start_date" value={{$works->start_date}} id="monthYearInput" required="required"/>
                                                                 </div>
                                                                 
                                                             </div>
@@ -97,7 +97,7 @@
                                                             <div class="mb-3">
                                                                 <label>End Date</label>
                                                                 <div class="position-relative" id="datepicker4">
-                                                                    <input type="date" class="form-control" name="end_date" id="monthYearInput" required="required"/>
+                                                                    <input type="date" class="form-control" name="end_date" value={{$works->end_date}} id="monthYearInput" required="required"/>
                                                                 </div>
                                                                 
                                                             </div>
@@ -105,57 +105,6 @@
                                                     </div>
                                                     <div>
                                                         <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <!-- end card body -->
-                                        </div>
-                                        <!-- end card -->
-                                    </div>
-                                    <!-- end col -->
-        
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title mb-4">Education</h4>
-        
-                                                <form action="{{route('save_education')}}" method="POST">
-                                                    @csrf
-                                                    <div class="row mb-4">
-                                                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Education Level</label>                                                        <div class="col-sm-9">
-                                                            <select name="education_level" class="form-select">
-                                                                <option selected>Select Education Level</option>
-                                                                <option value="High School Degree">High School Degree</option>
-                                                                <option value="Associate's Degree">Associate's Degree</option>
-                                                                <option value="Bachelor's Degree">Bachelor's Degree</option>
-                                                                <option value="Master's Degree">Master's Degree</option>
-                                                                <option value="Doctoral Degree">Doctoral Degree</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <label for="horizontal-institution-input" class="col-sm-3 col-form-label">Institution</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" name="institution" placeholder="Institution Name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <label for="horizontal-password-input" class="col-sm-3 col-form-label">Start Date</label>
-                                                        <div class="col-sm-9" id="datepicker4">
-                                                            <input type="date" class="form-control" name="start_date" id="monthYearInput" required="required"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <label for="horizontal-password-input" class="col-sm-3 col-form-label">End Date</label>
-                                                        <div class="col-sm-9" id="datepicker4">
-                                                            <input type="date" class="form-control" name="end_date" id="monthYearInput" required="required"/>
-                                                        </div>
-                                                    </div>
-        
-                                                    <div class="row justify-content-end"> 
-                                                        <div>
-                                                            <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                                        </div>
                                                     </div>
                                                 </form>
                                             </div>

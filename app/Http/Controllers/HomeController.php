@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Bio\Bio;
 use App\Models\Bio\Skill;
+use App\Models\Resume\Work;
 use Illuminate\Http\Request;
+use App\Models\Resume\Education;
 use App\Models\Services\Service;
 use App\Models\Portfolio\Portfolio;
 use Illuminate\Support\Facades\Auth;
@@ -48,6 +50,10 @@ class HomeController extends Controller
         $portfolios = Portfolio::where('user_id' , $user_id)->get();
 
         $services = Service::where('user_id' , $user_id)->get();
+
+        $experience = Work::where('user_id' , $user_id)->get();
+
+        $education = Education::where('user_id' , $user_id)->get();
          
 
         return view('website')->with([
@@ -57,7 +63,9 @@ class HomeController extends Controller
             'bio_info' => $bio_info,
             'skills' => $skills,
             'portfolios' => $portfolios,
-            'services' => $services
+            'services' => $services,
+            'experience' => $experience,
+            'education' => $education
         ]);
     }
 }
