@@ -83,8 +83,7 @@
                         <span key="t-projects">Testimonials</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-p-grid">Create Testimonial</a></li>
-                        <li><a href="#" key="t-p-list">Edit Testimonial</a></li>
+                        <li><a href="{{route('testimonials')}}" key="t-p-grid">Testimonials</a></li>
                     </ul>
                 </li>
 

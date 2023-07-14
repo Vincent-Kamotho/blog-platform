@@ -73,3 +73,12 @@ Route::group(['prefix' => 'resume' , 'middleware' => 'auth'], function(){
     Route::post('education/update/{id}',[App\Http\Controllers\Resume\EducationController::class, 'update']);
     Route::get('education/delete/{id}', [App\Http\Controllers\Resume\EducationController::class, 'destroy']);
 });
+
+Route::group(['prefix' => 'testimonials' , 'middleware' => 'auth'], function(){
+    Route::get('testimonial', [App\Http\Controllers\Testimonials\TestimonialController::class, 'index'])->name('testimonials');
+    Route::get('create_testimonial', [App\Http\Controllers\Testimonials\TestimonialController::class, 'create'])->name('create_testimonials');
+    Route::post('save_testimonial', [App\Http\Controllers\Testimonials\TestimonialController::class, 'store'])->name('save_testimonial');
+    Route::get('edit_testimonial/{id}', [App\Http\Controllers\Testimonials\TestimonialController::class,'edit']);
+    Route::post('update_testimonial/{id}', [App\Http\Controllers\Testimonials\TestimonialController::class, 'update']);
+    Route::get('delete_testimonial/{id}', [App\Http\Controllers\Testimonials\TestimonialController::class, 'destroy']);
+});
