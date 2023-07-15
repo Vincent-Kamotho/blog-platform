@@ -21,13 +21,16 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
+                            <a href="{{route('edit_blog')}}"  key="t-vertical">Posts</a>
+                        </li>
+                        {{-- <li>
                             <a href="{{route('myblog')}}"  key="t-vertical">Create Post</a>
                         </li>
 
                         <li>
                             <a href="{{route('edit_blog')}}"  key="t-horizontal">Edit Post</a>
                             
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 
@@ -87,6 +90,7 @@
                     </ul>
                 </li>
 
+                
                 <!--
                 <li>
                     <a href="#" class="has-arrow waves-effect">

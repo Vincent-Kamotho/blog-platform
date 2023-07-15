@@ -263,110 +263,18 @@
                         <div class="block-47-image">
                             <img src="{{asset('websiteassets/images/person_1.jpg')}}" alt="Image placeholder" class="img-fluid">
                         </div>
+                        @foreach($testimonial as $testimonial)
                         <blockquote class="block-47-quote">
-                            <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and
-                                Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at
-                                the coast of the Semantics, a large language ocean.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; Jeremy Winston, CEO <a href="#">XYZ
-                                    Inc.</a></cite>
+                            <p>&ldquo;{{$testimonial->message}}.&rdquo;</p>
+                            <cite class="block-47-quote-author">&mdash; {{$testimonial->client_name}}</cite>
                         </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="block-47 d-flex mb-5">
-                        <div class="block-47-image">
-                            <img src="{{asset('websiteassets/images/person_2.jpg')}}" alt="Image placeholder" class="img-fluid">
-                        </div>
-                        <blockquote class="block-47-quote">
-                            <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and
-                                Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at
-                                the coast of the Semantics, a large language ocean.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; Richard Atkinson, CEO <a href="#">XYZ
-                                    Inc.</a></cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="block-47 d-flex mb-5">
-                        <div class="block-47-image">
-                            <img src="{{asset('websiteassets/images/person_3.jpg')}}" alt="Image placeholder" class="img-fluid">
-                        </div>
-                        <blockquote class="block-47-quote">
-                            <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and
-                                Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at
-                                the coast of the Semantics, a large language ocean.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; Jeremy Winston, CEO <a href="#">XYZ
-                                    Inc.</a></cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="block-47 d-flex mb-5">
-                        <div class="block-47-image">
-                            <img src="{{asset('websiteassets/images/person_4.jpg')}}" alt="Image placeholder" class="img-fluid">
-                        </div>
-                        <blockquote class="block-47-quote">
-                            <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and
-                                Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at
-                                the coast of the Semantics, a large language ocean.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; Richard Atkinson, CEO <a href="#">XYZ
-                                    Inc.</a></cite>
-                        </blockquote>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="site-section" id="blog-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-5" data-aos="fade-up" data-aos-delay="0">
-                    <div class="section-heading text-center">
-                        <h2>Read on Medium</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-9">
-                    <ul class="list-unstyled blog-entries">
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <a href="#" class="d-block d-md-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="d-block date">Jun 28, 2020</span>
-                                    <h3>Front-end Developer Demands today</h3>
-                                </div>
-                                <span class="read">
-                                    2 mins read
-                                </span>
-                            </a>
-                        </li>
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <a href="#" class="d-block d-md-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="d-block date">Jun 28, 2020</span>
-                                    <h3>I Used React JS</h3>
-                                </div>
-                                <span class="read">
-                                    2 mins read
-                                </span>
-                            </a>
-                        </li>
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <a href="#" class="d-block d-md-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="d-block date">Jun 28, 2020</span>
-                                    <h3>Why Front-end Developer So Important</h3>
-                                </div>
-                                <span class="read">
-                                    2 mins read
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="untree_co-section" id="contact-section">
         <div class="container">
             <div class="row">
@@ -404,7 +312,7 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
-                <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                {{-- <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="h5 mb-4">Contact Info</h3>
                     <address class="text-black d-flex"><span class="mt-1 icon-room mr-2"></span><span>43 Raymouth Rd.
                             Baltemoer, London 3910</span></address>
@@ -422,7 +330,7 @@
                         <li class="mb-3"><a href="https://colorlib/" target="_blank" class="d-flex"><span
                                     class="mt-1 icon-globe mr-2"></span><span>https://Colorlib/</span></a></li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -487,19 +395,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <p>
-
-                        Copyright &copy;<script data-cfasync="false"
-                            src="{{asset('websiteassets/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="icon-heart text-danger"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
-                    </p>
-                </div>
-            </div>
+            
         </div>
     </div>
     <div id="overlayer"></div>

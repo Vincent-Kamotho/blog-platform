@@ -12,12 +12,17 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('websiteassets/login/stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('websiteassets/login/css/style.css')}}">
 </head>
 <body>
     <div id="app">
@@ -79,5 +84,11 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="{{asset('websiteassets/login/js/jquery.min.js')}}"></script>
+    <script src="{{asset('websiteassets/login/js/popper.js')}}"></script>
+    <script src="{{asset('websiteassets/login/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('websiteassets/login/js/main.js')}}"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e70f2fae9f94f7b","version":"2023.4.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>

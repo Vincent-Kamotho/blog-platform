@@ -48,6 +48,9 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
+                                        <div style="text-align: right;">
+                                            <a href="{{route('myblog')}}" class="btn btn-success">Add Post</a>
+                                        </div>
                                         <h4 class="card-title"></h4>   
                                         <div class="table-responsive">
                                             <table class="table mb-0">

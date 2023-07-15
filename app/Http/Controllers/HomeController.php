@@ -11,6 +11,7 @@ use App\Models\Services\Service;
 use App\Models\Portfolio\Portfolio;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Blogs\Blog_Introduction;
+use App\Models\Testimonial\Testimonial;
 
 class HomeController extends Controller
 {
@@ -54,7 +55,8 @@ class HomeController extends Controller
         $experience = Work::where('user_id' , $user_id)->get();
 
         $education = Education::where('user_id' , $user_id)->get();
-         
+
+        $testimonial = Testimonial::where('user_id' , $user_id)->get();         
 
         return view('website')->with([
             'introduction' => $introduction,
@@ -65,7 +67,8 @@ class HomeController extends Controller
             'portfolios' => $portfolios,
             'services' => $services,
             'experience' => $experience,
-            'education' => $education
+            'education' => $education,
+            'testimonial' => $testimonial
         ]);
     }
 }
